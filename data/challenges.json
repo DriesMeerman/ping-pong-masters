@@ -10,5 +10,71 @@
     "title": "Around the World Rally",
     "description": "Complete a 10-shot rally where each player must hit the ball to a different quadrant of the opponent's side on consecutive shots (e.g., forehand corner, backhand corner, middle-forehand, middle-backhand). Both players attempt this.",
     "difficulty": "Medium"
+  },
+  {
+    "id": "precision-target-practice",
+    "title": "Precision Target Practice",
+    "description": "Stick five removable targets on your side of the table; first player to hit all five targets in any order wins the round.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "paddle-swap-chaos",
+    "title": "Paddle Swap Chaos",
+    "description": "After each rally point, both players must swap paddles and immediately serve. Play to 11 with paddle-switching after every point.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "no-spin-challenge",
+    "title": "No Spin Challenge",
+    "description": "Play a best-of-3 match where no spin is allowed—any spiny serves or returns incur an automatic penalty point.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "blindfolded-return",
+    "title": "Blindfolded Return",
+    "description": "One player is blindfolded and must return 10 consecutive rally shots led by the unblindfolded opponent; then switch roles.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "marathon-master",
+    "title": "Marathon Master",
+    "description": "Keep a continuous rally going for 100 hits without letting the ball drop; if the rally breaks, start over from zero.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "balloon-rally",
+    "title": "Balloon Rally",
+    "description": "Use a balloon instead of a ping-pong ball and rally back and forth without letting it touch the ground. First to 10 rallies wins.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "paddle-juggle",
+    "title": "Paddle Juggle",
+    "description": "Balance your paddle on your forehead between shots during a rally. If the paddle falls, you lose the point.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "spoons-and-forks",
+    "title": "Spoons and Forks",
+    "description": "Play a quick game using a spoon in one hand and a fork in the other instead of paddles.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "handicap-serve",
+    "title": "Handicap Serve Challenge",
+    "description": "Experienced player must serve with their non-dominant hand and win a game to 11 against a less experienced opponent.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "restricted-backhand",
+    "title": "Restricted Backhand",
+    "description": "Experienced player can only use backhand strokes for the entire match, while novice can use any stroke. Play to 11.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "feed-and-feast",
+    "title": "Feed and Feast",
+    "description": "Novice gets to feed every ball gently to start the rally; the experienced player must win the point in three shots or less. First to 11.",
+    "difficulty": "Medium"
   }
 ]

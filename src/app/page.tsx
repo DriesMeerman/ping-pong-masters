@@ -2,11 +2,12 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getChallenges } from '../lib/challenges'; // Changed to relative path
+// Removed import { getChallenges } from '../lib/challenges';
+import { FeaturedChallenges } from '@/components/FeaturedChallenges'; // Import the new component
 
-// Make the component async to fetch data
-const HomePage = async () => {
-  const challenges = await getChallenges();
+// Component is no longer async as FeaturedChallenges fetches its own data
+const HomePage = () => {
+  // Removed const challenges = await getChallenges();
 
   return (
     <div className="min-h-screen bg-cream bg-grain text-olive flex flex-col">
@@ -36,6 +37,13 @@ const HomePage = async () => {
               >
                 View Gallery
               </Link>
+              {/* Add link to challenges page maybe? */}
+              <Link
+                href="/challenges"
+                className="bg-amber text-white font-semibold py-3 px-6 rounded shadow hover:scale-105 transition-transform"
+              >
+                View Challenges
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
@@ -49,24 +57,9 @@ const HomePage = async () => {
           </div>
         </section>
 
-        {/* Challenges Section */}
+        {/* Challenges Section - Replaced with FeaturedChallenges */}
         <section className="my-16">
-          <h3 className="text-3xl font-bold text-skin mb-6 text-center">Challenges</h3>
-          {challenges.length > 0 ? (
-            <div className="grid md:grid-cols-2 gap-6">
-              {challenges.map((challenge) => (
-                <div key={challenge.id} className="bg-white/50 p-6 rounded-lg shadow-md border border-olive/20">
-                  <h4 className="text-xl font-semibold text-amber mb-2">{challenge.title}</h4>
-                  <p className="text-olive/90 mb-3">{challenge.description}</p>
-                  <span className={`inline-block px-3 py-1 text-sm font-medium rounded-full ${ challenge.difficulty === 'Easy' ? 'bg-green-100 text-green-800' : challenge.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-800' : 'bg-red-100 text-red-800' }`}>
-                    {challenge.difficulty}
-                  </span>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-center text-lg">No challenges available at the moment. Check back soon!</p>
-          )}
+          <FeaturedChallenges showViewAllButton={true} />
         </section>
       </main>
 
