@@ -56,7 +56,7 @@ const HomePage = async () => {
 
         {/* Challenges Section */}
         <section className="my-16">
-          <h3 className="text-3xl font-bold text-skin mb-6 text-center">Weekly Challenges</h3>
+          <h3 className="text-3xl font-bold text-skin mb-6 text-center">Challenges</h3>
           {challenges.length > 0 ? (
             <div className="grid md:grid-cols-2 gap-6">
               {challenges.map((challenge) => (
