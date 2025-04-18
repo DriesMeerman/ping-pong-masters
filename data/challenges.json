@@ -1,0 +1,14 @@
+[
+  {
+    "id": "first-to-five-spin",
+    "title": "First to Five: Spin Serve Only",
+    "description": "Win a game to 5 points where every serve must have significant spin (topspin, backspin, or sidespin).",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "around-the-world-rally",
+    "title": "Around the World Rally",
+    "description": "Complete a 10-shot rally where each player must hit the ball to a different quadrant of the opponent's side on consecutive shots (e.g., forehand corner, backhand corner, middle-forehand, middle-backhand). Both players attempt this.",
+    "difficulty": "Medium"
+  }
+]
