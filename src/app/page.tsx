@@ -16,19 +16,22 @@ const HomePage = () => {
         <h1 className="text-5xl font-bold text-skin text-center">
           Ping Pong Masters
         </h1>
-        <p className="mt-4 text-center text-lg">
-          Welcome to our ping-pong league!
-        </p>
+        {/* <p className="mt-4 text-center text-lg">
+          Welcome to our League!
+        </p> */}
       </header>
 
       {/* Main Content */}
       <main className="flex-1 container mx-auto px-4">
-        {/* Hero Section */}
+
+
         <section className="flex flex-col md:flex-row items-center md:justify-between my-16">
           <div className="md:w-1/2">
-            <h2 className="text-4xl font-bold text-amber">Meet Our Mascotte</h2>
+            <h2 className="text-4xl font-bold text-amber">
+              Smash Your Stress, Serve Your Style!
+            </h2>
             <p className="mt-4 text-lg">
-              The grainy legend of our league, embodying all the motion and energy of ping-pong!
+              It’s 2 PM—your inbox is piled high, but the paddle’s calling. As post‑lunch haze and smoke rings mingle over the net, the Master stalks the court like an office legend—rumored to scare the cubicle dwellers, but in truth he’ll sculpt you into his next prodigy.
             </p>
             <div className="mt-6 flex flex-wrap">
               <Link
@@ -37,12 +40,11 @@ const HomePage = () => {
               >
                 View Gallery
               </Link>
-              {/* Add link to challenges page maybe? */}
               <Link
                 href="/challenges"
-                className="bg-amber text-white font-semibold py-3 px-6 rounded shadow hover:scale-105 transition-transform"
+                className="border-2 border-olive text-olive font-semibold py-3 px-6 rounded hover:bg-olive hover:text-cream transition-colors mt-4 md:mt-0"
               >
-                View Challenges
+                See Challenges
               </Link>
             </div>
           </div>
