@@ -1,7 +1,8 @@
 // app/page.tsx
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getChallenges } from '@/lib/challenges'; // Assuming @ alias is configured
+import { getChallenges } from '../lib/challenges'; // Changed to relative path
 
 // Make the component async to fetch data
 const HomePage = async () => {
@@ -34,12 +35,6 @@ const HomePage = async () => {
                 className="bg-skin text-cream font-semibold py-3 px-6 rounded shadow hover:scale-105 transition-transform mr-4"
               >
                 View Gallery
-              </Link>
-              <Link
-                href="/rankings"
-                className="border-2 border-olive text-olive font-semibold py-3 px-6 rounded hover:bg-olive hover:text-cream transition-colors mt-4 md:mt-0"
-              >
-                See Rankings
               </Link>
             </div>
           </div>
