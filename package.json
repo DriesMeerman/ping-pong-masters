@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:dev": "docker build -t ping-pong-master . && docker run --rm -p 3000:3000 ping-pong-master"
   },
   "dependencies": {
     "@types/react-modal": "^3.16.3",

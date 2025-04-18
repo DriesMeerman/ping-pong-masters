@@ -20,7 +20,7 @@ const RulesPage: FC = () => {
           <h2 className="text-2xl font-semibold text-amber mb-4">Informal House Rules (Now Formal!)</h2>
           <ul className="list-disc list-inside space-y-2 text-olive/90">
             <li>
-              <strong>The Crawl of Shame:</strong> If a player scores 0 points in a game (gets "skunked"), they must perform the Crawl of Shame by crawling under the ping pong table after the game concludes.
+              <strong>The Crawl of Shame:</strong> If a player scores 0 points in a game (gets &quot;skunked&quot;), they must perform the Crawl of Shame by crawling under the ping pong table after the game concludes.
             </li>
             <li>Respect the paddle, respect the opponent.</li>
             <li>Calls must be made clearly and immediately. Disagreements settled by a re-point or rock-paper-scissors.</li>
@@ -29,7 +29,7 @@ const RulesPage: FC = () => {
 
         <section>
           <h2 className="text-2xl font-semibold text-amber mb-4">Conduct</h2>
-           <p className="text-olive/90">Play fair, have fun, and don't throw your paddle (too hard).</p>
+           <p className="text-olive/90">Play fair, have fun, and don&apos;t throw your paddle (too hard).</p>
         </section>
       </div>
     </div>
