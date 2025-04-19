@@ -16,9 +16,6 @@ const HomePage = () => {
         <h1 className="text-5xl font-bold text-skin text-center">
           Ping Pong Masters
         </h1>
-        {/* <p className="mt-4 text-center text-lg">
-          Welcome to our League!
-        </p> */}
       </header>
 
       {/* Main Content */}
@@ -39,12 +36,6 @@ const HomePage = () => {
                 className="bg-skin text-cream font-semibold py-3 px-6 rounded shadow hover:scale-105 transition-transform mr-4"
               >
                 View Gallery
-              </Link>
-              <Link
-                href="/challenges"
-                className="border-2 border-olive text-olive font-semibold py-3 px-6 rounded hover:bg-olive hover:text-cream transition-colors mt-4 md:mt-0"
-              >
-                See Challenges
               </Link>
             </div>
           </div>
