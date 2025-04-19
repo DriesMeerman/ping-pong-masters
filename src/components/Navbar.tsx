@@ -9,10 +9,9 @@ const Navbar = () => {
         </Link>
         <div className="space-x-4">
           <Link href="/" className="hover:text-amber transition-colors">Home</Link>
-          <Link href="/gallery" className="hover:text-amber transition-colors">Gallery</Link>
-          {/* <Link href="/rankings" className="hover:text-amber transition-colors">Rankings</Link> */}
           <Link href="/rules" className="hover:text-amber transition-colors">Rules</Link>
-          {/* Removed leftover comment */}
+          <Link href="/gallery" className="hover:text-amber transition-colors">Gallery</Link>
+          <Link href="/challenges" className="hover:text-amber transition-colors">Challenges</Link>
         </div>
       </div>
     </nav>
