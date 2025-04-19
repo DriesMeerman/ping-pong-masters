@@ -89,6 +89,5 @@ jobs:
             fi
 
             echo "Starting new container: $containerName"
-            # Map host port 3000 to container port 3000 (exposed in Dockerfile)
-            # Adjust host port if needed (e.g., 80:3000 for standard HTTP)
-            docker run --name $containerName -d -p 3000:3000 $imageName
+            # Map host port 3232 to container port 3000
+            docker run --name $containerName -d -p 3232:3000 $imageName
