@@ -30,23 +30,28 @@
 body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  @apply bg-cream;
+  background-color: var(--color-cream);
+  background-image: url('/grain.png');
+  background-repeat: repeat;
+  background-blend-mode: multiply;
 }
 
-/* Apply grain overlay */
+/* Remove grain overlay via pseudo-element */
+/*
 body::before {
   content: '';
-  position: fixed; /* Or absolute if you prefer */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/mascotte/grain.png'); /* Ensure this path is correct */
+  background-image: url('/grain.png');
   background-repeat: repeat;
-  opacity: 0.1; /* Adjust opacity as needed */
-  pointer-events: none; /* Make sure it doesn't interfere with clicks */
-  z-index: -1; /* Place it behind content */
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
 }
+*/
 
 /*
 // apply cream + grain todo

@@ -10,7 +10,7 @@ const HomePage = () => {
   // Removed const challenges = await getChallenges();
 
   return (
-    <div className="min-h-screen bg-cream bg-grain text-olive flex flex-col">
+    <div className="min-h-screen text-olive flex flex-col">
       {/* Header */}
       <header className="py-8">
         <h1 className="text-5xl font-bold text-skin text-center">
@@ -31,7 +31,7 @@ const HomePage = () => {
               Smash Your Stress, Serve Your Style!
             </h2>
             <p className="mt-4 text-lg">
-              It’s 2 PM—your inbox is piled high, but the paddle’s calling. As post‑lunch haze and smoke rings mingle over the net, the Master stalks the court like an office legend—rumored to scare the cubicle dwellers, but in truth he’ll sculpt you into his next prodigy.
+              It&apos;s 2 PM—your inbox is piled high, but the paddle&apos;s calling. As post-lunch haze and smoke rings mingle over the net, the Master stalks the court like an office legend—rumored to scare the cubicle dwellers, but in truth he&apos;ll sculpt you into his next prodigy.
             </p>
             <div className="mt-6 flex flex-wrap">
               <Link
