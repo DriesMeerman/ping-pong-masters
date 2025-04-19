@@ -76,5 +76,125 @@
     "title": "Feed and Feast",
     "description": "Novice gets to feed every ball gently to start the rally; the experienced player must win the point in three shots or less. First to 11.",
     "difficulty": "Medium"
+  },
+  {
+    "id": "target-serve-challenge",
+    "title": "Target Serve Challenge",
+    "description": "Serve 10 balls aiming at specified targets; score 1 point for each successful hit, first to 8 points wins.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "half-table-rally",
+    "title": "Half-Table Rally",
+    "description": "Play a rally where both players can only hit the ball within the half of the table closest to the net; keep it going for 30 shots.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "loop-only-marathon",
+    "title": "Loop-Only Marathon",
+    "description": "Maintain a continuous topspin rally for 100 strokes without breaking; no pushes or blocks allowed.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "third-ball-attack-drill",
+    "title": "Third Ball Attack Drill",
+    "description": "Practice serving, then attacking the third ball over 20 points; points only count when the attack ends the rally.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "multi-ball-serve-receive",
+    "title": "Multi-Ball Serve & Receive",
+    "description": "Coach feeds 30 balls with varying spins; player must correctly return each serve into the open table area.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "backhand-loop-drill",
+    "title": "Backhand Loop Drill",
+    "description": "Recover and loop 50 backhand balls fed by coach; score progress by consecutive success.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "push-and-block-duel",
+    "title": "Push and Block Duel",
+    "description": "Rally for 50 pushes against blocks; one player pushes, the other blocks, then switch roles.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "serve-variation-game",
+    "title": "Serve Variation Game",
+    "description": "Play to 11 points; server must alternate spin type (topspin, sidespin, backspin) each serve.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "footwork-circuit",
+    "title": "Footwork Circuit",
+    "description": "Place cones in four corners; player must hit the ball then run to the next cone before the next feed; complete 20 feeds.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "defense-to-attack-transition",
+    "title": "Defense to Attack Transition",
+    "description": "Defender returns 20 attacking loops with blocks or chops, then counterattacks the next ball.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "power-drive-challenge",
+    "title": "Power Drive Challenge",
+    "description": "Both players play only powerful flat drives; first to 15 points wins.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "reaction-feed-drill",
+    "title": "Reaction Feed Drill",
+    "description": "Coach feeds random wide shots; player must react and return within two steps; complete 30 successful returns.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "mirror-rally",
+    "title": "Mirror Rally",
+    "description": "Two players stand facing each other and mirror the opponent’s shot placement and spin for 50 shots.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "angle-smash-drill",
+    "title": "Angle Smash Drill",
+    "description": "Practice setting up and executing angled smashes for 20 successful points against a multi-ball feed.",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "serve-receive-pressure",
+    "title": "Serve & Receive Pressure",
+    "description": "Alternate serving and receiving; returner must win the point after each serve; first to 10 wins.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "narrow-table-drill",
+    "title": "Narrow Table Drill",
+    "description": "Play using only one half-width of the table; maintain a rally for 40 shots.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "spin-deception-game",
+    "title": "Spin Deception Game",
+    "description": "Server disguises spin; receiver must call out the spin type before returning; correct calls score extra points.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "continuous-rally-timer",
+    "title": "Continuous Rally Timer",
+    "description": "Time how long you can sustain a rally; goal is to beat previous time. Track best sessions.",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "chop-return-drill",
+    "title": "Chop Return Drill",
+    "description": "Player practices chopping against incoming loops; complete 30 chops with consistent depth and backspin.",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "king-of-the-table",
+    "title": "King of the Table",
+    "description": "Four players rotate; winner stays on, challengers wait in queue; first to win three consecutive matches is king.",
+    "difficulty": "Easy"
   }
 ]
