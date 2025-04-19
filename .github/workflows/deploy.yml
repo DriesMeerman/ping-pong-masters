@@ -1,0 +1,93 @@
+name: Build, Publish, and Deploy Ping Pong Masters
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-check:
+    name: Build Check (PR)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Match the version in Dockerfile
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js app
+        run: npm run build
+
+  build-and-publish-container:
+    runs-on: ubuntu-latest
+    # Only run on push to main branch for publishing
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USER }}/ping-pong:latest # Replace ping-pong with your desired image name if needed
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-publish-container
+    # Only run on push to main branch or manual dispatch
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }} # Consider using SSH keys for better security
+          port: ${{ secrets.PORT }}
+          script: |
+            containerName="ping-pong" # Match the image name base
+            imageName="${{ secrets.DOCKER_USER }}/ping-pong:latest" # Match the image name used above
+
+            echo "Pulling latest image: $imageName"
+            docker pull $imageName
+
+            containerId=$(docker ps -a -q --filter="name=$containerName")
+
+            if [ -z "$containerId" ]
+            then
+              echo "No container found with name $containerName."
+            else
+              echo "Stopping and removing existing container: $containerId"
+              docker stop $containerId
+              docker rm $containerId
+            fi
+
+            echo "Starting new container: $containerName"
+            # Map host port 3232 to container port 3000
+            docker run --name $containerName -d -p 3232:3000 $imageName

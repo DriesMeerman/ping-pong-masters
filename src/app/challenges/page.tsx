@@ -1,4 +1,4 @@
-import { getAllChallenges, Challenge } from '@/lib/challenges';
+import { getAllChallenges } from '@/lib/challenges';
 import { FeaturedChallenges } from '@/components/FeaturedChallenges';
 import ChallengeListClient from '@/components/ChallengeListClient';
 
