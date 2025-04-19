@@ -63,7 +63,7 @@ const GalleryClient: React.FC<GalleryClientProps> = ({ imagePaths }) => {
         className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50"
         overlayClassName="fixed inset-0 bg-transparent z-40"
       >
-        <div className="relative max-w-3xl max-h-[80vh] bg-white p-1 rounded-lg shadow-xl">
+        <div className="relative bg-transparent rounded-lg shadow-xl">
           <button
             onClick={closeModal}
             className="absolute -top-3 -right-3 bg-skin text-white rounded-full p-1 z-10 hover:bg-olive transition-colors focus:outline-none focus:ring-2 focus:ring-white"
@@ -92,7 +92,11 @@ const GalleryClient: React.FC<GalleryClientProps> = ({ imagePaths }) => {
               height={600}
               placeholder="blur"
               blurDataURL={selectedImage.blurDataURL}
-              style={{ objectFit: 'contain', maxHeight: '80vh', maxWidth: '100%' }}
+              style={{ 
+                objectFit: 'contain',
+                maxHeight: '85vh', 
+                maxWidth: '90vw'
+              }}
               className="rounded-md"
             />
           )}
