@@ -65,18 +65,15 @@ const ChallengeListClient: React.FC<ChallengeListClientProps> = ({ challenges })
         ))}
       </div>
 
-      {/* Challenge Details Modal */}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Challenge Details"
-        // Basic styling, adjust as needed
         className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50"
         overlayClassName="fixed inset-0 bg-transparent z-40"
       >
         {selectedChallenge && (
           <div className="relative bg-white/90 rounded-lg shadow-xl p-6 sm:p-8 max-w-lg w-full mx-auto">
-            {/* Close Button */}
             <button
               onClick={closeModal}
               className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-full p-1"
@@ -87,7 +84,6 @@ const ChallengeListClient: React.FC<ChallengeListClientProps> = ({ challenges })
               </svg>
             </button>
 
-            {/* Modal Content */}
             <div className="flex justify-between items-start mb-4 gap-2">
                  <h2 className="text-2xl font-semibold text-olive flex-1">{selectedChallenge.title}</h2>
                  <span className={`inline-block px-3 py-1 text-sm font-medium rounded-full border ${getDifficultyClasses(selectedChallenge.difficulty)} capitalize whitespace-nowrap`}>
@@ -98,13 +94,6 @@ const ChallengeListClient: React.FC<ChallengeListClientProps> = ({ challenges })
             <p className="text-gray-700 text-base">
               {selectedChallenge.description}
             </p>
-
-            {/* Add more details or actions here (e.g., Sign Up button) */}
-            {/* <div className="mt-6 text-right">
-              <button className="bg-amber text-white px-4 py-2 rounded-md hover:bg-amber/90">
-                Sign Up / Join
-              </button>
-            </div> */}
           </div>
         )}
       </Modal>
