@@ -52,7 +52,7 @@ const ChallengeListClient: React.FC<ChallengeListClientProps> = ({ challenges })
             id={challenge.id} // Keep id for anchor links if needed elsewhere
             className="block w-full text-left group focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2 rounded-lg"
           >
-            <div className="bg-white p-6 rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-200 border border-gray-200 group-hover:border-amber">
+            <div className="bg-white/80 p-6 rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-200 border border-olive/20 group-hover:border-amber">
               <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-3 gap-2">
                 <h3 className="text-xl font-medium text-olive group-hover:text-amber transition-colors">{challenge.title}</h3>
                 <span className={`inline-block px-3 py-1 text-sm font-medium rounded-full border ${getDifficultyClasses(challenge.difficulty)} capitalize whitespace-nowrap`}>
@@ -75,7 +75,7 @@ const ChallengeListClient: React.FC<ChallengeListClientProps> = ({ challenges })
         overlayClassName="fixed inset-0 bg-transparent z-40"
       >
         {selectedChallenge && (
-          <div className="relative bg-white rounded-lg shadow-xl p-6 sm:p-8 max-w-lg w-full mx-auto">
+          <div className="relative bg-white/90 rounded-lg shadow-xl p-6 sm:p-8 max-w-lg w-full mx-auto">
             {/* Close Button */}
             <button
               onClick={closeModal}

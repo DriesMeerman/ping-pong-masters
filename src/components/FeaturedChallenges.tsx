@@ -37,7 +37,7 @@ export async function FeaturedChallenges({ showViewAllButton = true }: FeaturedC
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {challenges.map((challenge) => (
           <Link key={challenge.id} href={`/challenges#${challenge.id}`} className="block group">
-            <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-200 border border-gray-200 hover:border-amber h-full flex flex-col">
+            <div className="bg-white/80 p-4 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-200 border border-olive/20 hover:border-amber h-full flex flex-col">
               <div className="flex justify-between items-start mb-2 gap-2">
                 <h3 className="text-lg font-medium text-olive group-hover:text-amber transition-colors flex-1">{challenge.title}</h3>
                 {/* Difficulty display */}
