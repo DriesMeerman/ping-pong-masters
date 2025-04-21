@@ -1,12 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Modal from 'react-modal';
 import type { GalleryImage } from '@/lib/gallery';
 
-// Set the app element for react-modal accessibility
-// We need to ensure this runs only on the client-side.
+
 if (typeof window !== 'undefined') {
   Modal.setAppElement('body'); // Adjust selector if needed
 }
@@ -15,9 +14,25 @@ interface GalleryClientProps {
   imagePaths: GalleryImage[];
 }
 
+// Helper function to group images by their 'group' property
+const groupImages = (images: GalleryImage[]) => {
+  return images.reduce((acc, image) => {
+    const group = image.group || 'General'; // Use 'General' if group is empty/null
+    if (!acc[group]) {
+      acc[group] = [];
+    }
+    acc[group].push(image);
+    return acc;
+  }, {} as Record<string, GalleryImage[]>);
+};
+
 const GalleryClient: React.FC<GalleryClientProps> = ({ imagePaths }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+
+  // Group images
+  const groupedImages = useMemo(() => groupImages(imagePaths), [imagePaths]);
+  const groups = Object.keys(groupedImages).sort();
 
   const openModal = (image: GalleryImage) => {
     setSelectedImage(image);
@@ -32,21 +47,32 @@ const GalleryClient: React.FC<GalleryClientProps> = ({ imagePaths }) => {
   return (
     <>
       {imagePaths.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {imagePaths.map((image) => (
-            <button
-              key={image.src}
-              onClick={() => openModal(image)}
-              className="relative aspect-square overflow-hidden rounded-lg shadow-lg group border-2 border-amber/50 hover:border-amber transition-colors focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2"
-            >
-              <Image
-                src={image.src}
-                alt={`Gallery image ${image.src.split('/').pop()}`}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
-              />
-            </button>
+        <div className="space-y-10">
+          {groups.map((group) => (
+            <section key={group} className="mb-8">
+              <h2 className="text-2xl font-semibold text-olive mb-6 border-b border-olive/30 pb-2">
+                {group}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {groupedImages[group].map((image) => (
+                  <button
+                    key={image.src}
+                    onClick={() => openModal(image)}
+                    className="relative aspect-square overflow-hidden rounded-lg shadow-lg group border-2 border-amber/50 hover:border-amber transition-colors focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2"
+                  >
+                    <Image
+                      src={image.src}
+                      alt={`Gallery image in ${group}: ${image.src.split('/').pop()}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
+                      placeholder="blur"
+                      blurDataURL={image.blurDataURL}
+                    />
+                  </button>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
       ) : (
@@ -87,14 +113,14 @@ const GalleryClient: React.FC<GalleryClientProps> = ({ imagePaths }) => {
           {selectedImage && (
             <Image
               src={selectedImage.src}
-              alt="Enlarged gallery image"
+              alt={`Enlarged gallery image from ${selectedImage.group}`}
               width={800}
               height={600}
               placeholder="blur"
               blurDataURL={selectedImage.blurDataURL}
-              style={{ 
+              style={{
                 objectFit: 'contain',
-                maxHeight: '85vh', 
+                maxHeight: '85vh',
                 maxWidth: '90vw'
               }}
               className="rounded-md"
