@@ -1,0 +1,109 @@
+{
+  "id": 2,
+  "name": "Ping Pong Masters Open 2024",
+  "date": "2024-07-15",
+  "status": "completed",
+  "description": "An intense 8-player single elimination tournament.",
+  "players": [
+    { "id": "p1", "name": "Specter" },
+    { "id": "p2", "name": "Blade" },
+    { "id": "p3", "name": "Comet" },
+    { "id": "p4", "name": "Wraith" },
+    { "id": "p5", "name": "Nova" },
+    { "id": "p6", "name": "Zenith" },
+    { "id": "p7", "name": "Apex" },
+    { "id": "p8", "name": "Shadow" }
+  ],
+  "structure": "single_elimination",
+  "rounds": [
+    {
+      "roundNumber": 1,
+      "name": "Quarter-Finals",
+      "matches": [
+        {
+          "id": "QF1",
+          "slots": [
+            { "type": "player", "playerId": "p1", "seed": 1 },
+            { "type": "player", "playerId": "p8", "seed": 8 }
+          ],
+          "winnerId": "p1",
+          "score": "3-1",
+          "nextMatchId": "SF1"
+        },
+        {
+          "id": "QF2",
+          "slots": [
+            { "type": "player", "playerId": "p4", "seed": 4 },
+            { "type": "player", "playerId": "p5", "seed": 5 }
+          ],
+          "winnerId": "p5",
+          "score": "2-3",
+          "nextMatchId": "SF1"
+        },
+        {
+          "id": "QF3",
+          "slots": [
+            { "type": "player", "playerId": "p3", "seed": 3 },
+            { "type": "player", "playerId": "p6", "seed": 6 }
+          ],
+          "winnerId": "p3",
+          "score": "3-0",
+          "nextMatchId": "SF2"
+        },
+        {
+          "id": "QF4",
+          "slots": [
+            { "type": "player", "playerId": "p2", "seed": 2 },
+            { "type": "player", "playerId": "p7", "seed": 7 }
+          ],
+          "winnerId": "p2",
+          "score": "3-2",
+          "nextMatchId": "SF2"
+        }
+      ]
+    },
+    {
+      "roundNumber": 2,
+      "name": "Semi-Finals",
+      "matches": [
+        {
+          "id": "SF1",
+          "slots": [
+            { "type": "progression", "sourceMatchId": "QF1" },
+            { "type": "progression", "sourceMatchId": "QF2" }
+          ],
+          "winnerId": "p1",
+          "score": "3-0",
+          "nextMatchId": "F1"
+        },
+        {
+          "id": "SF2",
+          "slots": [
+            { "type": "progression", "sourceMatchId": "QF3" },
+            { "type": "progression", "sourceMatchId": "QF4" }
+          ],
+          "winnerId": "p3",
+          "score": "3-2",
+          "nextMatchId": "F1"
+        }
+      ]
+    },
+    {
+      "roundNumber": 3,
+      "name": "Final",
+      "matches": [
+        {
+          "id": "F1",
+          "slots": [
+            { "type": "progression", "sourceMatchId": "SF1" },
+            { "type": "progression", "sourceMatchId": "SF2" }
+          ],
+          "winnerId": "p1",
+          "score": "3-1",
+          "nextMatchId": null
+        }
+      ]
+    }
+  ],
+  "tournamentWinnerId": "p1"
+}
